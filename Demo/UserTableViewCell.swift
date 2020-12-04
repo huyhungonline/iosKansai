@@ -7,21 +7,24 @@
 //
 
 import UIKit
+import SDWebImage
 
 class UserTableViewCell: UITableViewCell {
 
+  @IBOutlet weak var avatarImgView: UIImageView!
   @IBOutlet weak var birthdayLbl: UILabel!
   @IBOutlet weak var usernameLbl: UILabel!
   @IBOutlet weak var avatar: UIView!
   
   override func awakeFromNib() {
         super.awakeFromNib()
-    avatar.layer.cornerRadius = 5
-    }
+        avatar.layer.cornerRadius = 5
+  }
   
   
   func fillData(user: User) {
     usernameLbl.text = user.name
-    birthdayLbl.text = user.birthday
+    birthdayLbl.text = user.age
+    avatarImgView.sd_setImage(with: URL(string: user.avatar ?? ""), placeholderImage: nil, options: [.continueInBackground], context: nil)
   }
 }

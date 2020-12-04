@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func setupRootView() {
     let rootVC = LoginViewController()
+    
     window = UIWindow.init(frame: UIScreen.main.bounds)
     window?.rootViewController = UINavigationController(rootViewController: rootVC)
     window?.makeKeyAndVisible()

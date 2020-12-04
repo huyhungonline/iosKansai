@@ -19,10 +19,19 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eff-V8-fkD">
                         <rect key="frame" x="16" y="10" width="50" height="50"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kkL-hK-peh">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kkL-hK-peh" secondAttribute="trailing" id="D7a-Sf-8ZH"/>
                             <constraint firstAttribute="width" constant="50" id="bMa-Is-6qv"/>
+                            <constraint firstAttribute="bottom" secondItem="kkL-hK-peh" secondAttribute="bottom" id="j5g-ky-w7S"/>
                             <constraint firstAttribute="height" constant="50" id="mhK-sX-8OJ"/>
+                            <constraint firstItem="kkL-hK-peh" firstAttribute="top" secondItem="eff-V8-fkD" secondAttribute="top" id="omj-Pm-hkP"/>
+                            <constraint firstItem="kkL-hK-peh" firstAttribute="leading" secondItem="eff-V8-fkD" secondAttribute="leading" id="sJY-qP-BhC"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCb-fn-mfB">
@@ -53,6 +62,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="avatar" destination="eff-V8-fkD" id="B2C-lS-sQU"/>
+                <outlet property="avatarImgView" destination="kkL-hK-peh" id="nkK-xA-3f2"/>
                 <outlet property="birthdayLbl" destination="6rm-0n-30R" id="i2w-DI-75u"/>
                 <outlet property="usernameLbl" destination="NCb-fn-mfB" id="c4b-B3-Hpd"/>
             </connections>

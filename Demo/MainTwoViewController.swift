@@ -8,14 +8,22 @@
 
 import UIKit
 import FMDB
+import Alamofire
+import NotificationBannerSwift
 
 struct User {
   var name: String?
-  var birthday: String?
+  var age: String?
+  var address: String?
+  var avatar: String?
   
   init(data: [String: Any]) {
-    name = data["name"] as? String
-    birthday = data["birthday"] as? String
+    if let user = data["user"] as? [String: Any] {
+      name = user["name"] as? String
+      age = user["age"] as? String
+      address = user["address"] as? String
+      avatar = user["avatar"] as? String
+    }
   }
   
   init() {
@@ -33,7 +41,16 @@ class MainTwoViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
-        inserUser()
+        getUserFromAPI()
+  }
+  
+  func getUserFromAPI() {
+    Alamofire.request("https://kansaibook.com/api/list-user", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+      if let data = response.value as? [[String: Any]] {
+        self.listUser = data.map({User(data: $0)})
+        self.tableView.reloadData()
+      }
+    }
   }
   
   func makeData() {
@@ -77,7 +94,7 @@ class MainTwoViewController: UIViewController {
         let birthday = user.string(forColumn: "birthday")
         var userModel = User()
         userModel.name = name
-        userModel.birthday = birthday
+        userModel.age = birthday
         listUser.append(userModel)
       }
     } catch {
@@ -115,5 +132,12 @@ extension MainTwoViewController: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 60
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let model = listUser[indexPath.row]
+    let vc = DetailViewController()
+    vc.passData(user: model)
+    self.navigationController?.pushViewController(vc, animated: true)
   }
 }

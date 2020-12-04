@@ -11,6 +11,9 @@ target 'Demo' do
   pod 'Toast-Swift', '~> 5.0.1'
   pod 'SQLite.swift', '~> 0.12.0'
   pod 'FMDB'
+  pod 'SDWebImage', '~> 5.0'
+  pod 'NotificationBannerSwift', '~> 3.0.0'
+
   target 'DemoTests' do
     inherit! :search_paths
     # Pods for testing

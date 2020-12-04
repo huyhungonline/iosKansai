@@ -11,6 +11,11 @@
 		B2246C662577D051002BD5A3 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2246C642577D051002BD5A3 /* UserTableViewCell.swift */; };
 		B2246C672577D051002BD5A3 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2246C652577D051002BD5A3 /* UserTableViewCell.xib */; };
 		B2246C6B2577D820002BD5A3 /* user.db in Resources */ = {isa = PBXBuildFile; fileRef = B2246C6A2577D820002BD5A3 /* user.db */; };
+		B230330F257A727B009B0DFA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B230330D257A727B009B0DFA /* DetailViewController.swift */; };
+		B2303310257A727B009B0DFA /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B230330E257A727B009B0DFA /* DetailViewController.xib */; };
+		B2303313257A765E009B0DFA /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2303312257A765E009B0DFA /* DataStorage.swift */; };
+		B2303316257A7B72009B0DFA /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2303314257A7B72009B0DFA /* ModalViewController.swift */; };
+		B2303317257A7B72009B0DFA /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2303315257A7B72009B0DFA /* ModalViewController.xib */; };
 		B247509A256FE129000E9EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2475099256FE129000E9EAE /* AppDelegate.swift */; };
 		B247509E256FE129000E9EAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247509D256FE129000E9EAE /* ViewController.swift */; };
 		B24750A1256FE129000E9EAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B247509F256FE129000E9EAE /* Main.storyboard */; };
@@ -43,6 +48,11 @@
 		B2246C642577D051002BD5A3 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		B2246C652577D051002BD5A3 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		B2246C6A2577D820002BD5A3 /* user.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = user.db; sourceTree = "<group>"; };
+		B230330D257A727B009B0DFA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B230330E257A727B009B0DFA /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		B2303312257A765E009B0DFA /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		B2303314257A7B72009B0DFA /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		B2303315257A7B72009B0DFA /* ModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
 		B2475096256FE129000E9EAE /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2475099256FE129000E9EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B247509D256FE129000E9EAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,9 +101,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B2303311257A763D009B0DFA /* DataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				B2303312257A765E009B0DFA /* DataStorage.swift */,
+			);
+			path = DataStorage;
+			sourceTree = "<group>";
+		};
 		B247508D256FE129000E9EAE = {
 			isa = PBXGroup;
 			children = (
+				B2303311257A763D009B0DFA /* DataStorage */,
 				B2475098256FE129000E9EAE /* Demo */,
 				B24750AF256FE12C000E9EAE /* DemoTests */,
 				B2475097256FE129000E9EAE /* Products */,
@@ -126,6 +145,10 @@
 				B24750BC256FE2D3000E9EAE /* MainTwoViewController.xib */,
 				B2246C642577D051002BD5A3 /* UserTableViewCell.swift */,
 				B2246C652577D051002BD5A3 /* UserTableViewCell.xib */,
+				B230330D257A727B009B0DFA /* DetailViewController.swift */,
+				B230330E257A727B009B0DFA /* DetailViewController.xib */,
+				B2303314257A7B72009B0DFA /* ModalViewController.swift */,
+				B2303315257A7B72009B0DFA /* ModalViewController.xib */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -244,10 +267,12 @@
 				B24750C3256FED6B000E9EAE /* LoginViewController.xib in Resources */,
 				B24750BE256FE2D3000E9EAE /* MainTwoViewController.xib in Resources */,
 				B24750A6256FE12C000E9EAE /* LaunchScreen.storyboard in Resources */,
+				B2303310257A727B009B0DFA /* DetailViewController.xib in Resources */,
 				B24750A3256FE12C000E9EAE /* Assets.xcassets in Resources */,
 				B2246C672577D051002BD5A3 /* UserTableViewCell.xib in Resources */,
 				B24750A1256FE129000E9EAE /* Main.storyboard in Resources */,
 				B2246C6B2577D820002BD5A3 /* user.db in Resources */,
+				B2303317257A7B72009B0DFA /* ModalViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,10 +354,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2303316257A7B72009B0DFA /* ModalViewController.swift in Sources */,
 				B24750C2256FED6B000E9EAE /* LoginViewController.swift in Sources */,
 				B24750BD256FE2D3000E9EAE /* MainTwoViewController.swift in Sources */,
 				B247509E256FE129000E9EAE /* ViewController.swift in Sources */,
+				B230330F257A727B009B0DFA /* DetailViewController.swift in Sources */,
 				B247509A256FE129000E9EAE /* AppDelegate.swift in Sources */,
+				B2303313257A765E009B0DFA /* DataStorage.swift in Sources */,
 				B2246C662577D051002BD5A3 /* UserTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +523,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SY8BT9AU5H;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -514,6 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SY8BT9AU5H;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
